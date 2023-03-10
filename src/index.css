@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --body-color: #f3f4f7;
+
+  --blue-color: #86b4ea;
+  --red-color: #ed5649;
+
+  --first-color: #ffffff;
+  --second-color: #f3f4f7;
+
+  --text-color: #343434;
+  --text-color-light: #949fae;
+
+  --font: "Montserrat", sans-serif;
+}
+body.dark {
+  --body-color: #454e80;
+
+  --blue-color: #86b4ea;
+  --red-color: #ed5649;
+
+  --first-color: #111e3b;
+  --second-color: #1f2c47;
+
+  --text-color: #ffffff;
+  --text-color-light: #aeb2bd;
+
+  background: linear-gradient(
+    135deg,
+    var(--first-color) 0%,
+    var(--body-color) 75%
+  );
+}
+body {
+  font-family: var(--font);
+  background: var(--body-color);
+  transition: all 0.5s;
+}
+.app-container {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  transition: all 0.5s;
+}
+
+.mode-btn {
+  position: fixed;
+  left: 50%;
+  top: 3rem;
+  transform: translate(-50%, 0);
+  background-color: var(--first-color);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: var(--text-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.25s;
+}
+.mode-btn span i {
+  padding-right: 0.25rem;
+}
+
+.weather-app {
+  position: relative;
+  width: 340px;
+  height: auto;
+  padding: 2rem 1.5rem;
+  border-radius: 1rem;
+  background-color: var(--first-color);
+  transition: all 0.5s;
+}
+
+.weather-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1.25rem;
+}
+
+.weather-app input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: var(--second-color);
+  border: 2px solid transparent;
+  color: var(--text-color);
+  outline: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.5s;
+}
+.weather-app input::placeholder {
+  color: var(--text-color-light);
+  font-weight: 300;
+}
+.weather-app input.error {
+  border-color: var(--red-color);
+}
+
+.search-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.date {
+  font-size: 0.75rem;
+  color: var(--text-color-light);
+}
+.city {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-color);
+  text-transform: capitalize;
+}
+.city span {
+  color: var(--text-color-light);
+}
+
+.weather-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.25rem;
+  align-items: center;
+  text-align: center;
+}
+.weather-icon {
+  width: 100%;
+  border-radius: 50%;
+  background-color: var(--second-color);
+  padding: 1.5rem;
+  display: grid;
+  place-items: center;
+}
+.weather-icon img {
+  width: 100%;
+  object-fit: cover;
+}
+.weather-temp {
+  display: grid;
+  place-items: center;
+}
+.temp {
+  position: relative;
+  font-size: 4rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  display: flex;
+}
+.temp span {
+  position: relative;
+  height: 100%;
+  font-size: 2rem;
+  top: 8px;
+}
+.temp.blue {
+  color: var(--blue-color);
+}
+.temp.red {
+  color: var(--red-color);
+}
+.status {
+  text-transform: capitalize;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  margin-bottom: 0.25rem;
+}
+.status-desc {
+  text-transform: capitalize;
+  font-size: 0.75rem;
+  color: var(--text-color-light);
+}
+
+.weather-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.25rem;
+  background-color: var(--second-color);
+  border-radius: 4rem;
+  padding: 1rem 0.25rem;
+}
+.grid-box {
+  display: grid;
+  place-items: center;
+  border-right: 1px solid var(--first-color);
+  padding: 0.5rem;
+}
+.grid-box:last-child {
+  border-right: none;
+}
+.grid-title {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-color);
+  margin-bottom: 0.25rem;
+}
+.grid-text {
+  font-size: 0.75rem;
+  color: var(--text-color-light);
+}
+
+.error-message {
+  margin-top: 1.25rem;
+  color: var(--red-color);
+}
+
+.loading {
+  position: relative;
+  margin: 1.5rem auto 0 auto;
+  width: 50px;
+  height: 50px;
+  border: 3px solid var(--blue-color);
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

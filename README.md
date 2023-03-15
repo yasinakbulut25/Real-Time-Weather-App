@@ -1,6 +1,6 @@
-# Real Time Weathe App Using React
+# Real Time Weather App Using React
 
-I have developed a Real time weather application using openweathermap fetch api.
+I have developed a Real time weather application with React using openweathermap fetch api.
 
 You can see real-time weather information by searching for the country, city or county you want. I've added weather-appropriate images. You can also use the application in dark mode or light mode.
 

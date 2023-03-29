@@ -12,7 +12,7 @@ Information you can see about the place you are looking for:
 - Humidity
 
 ## Live Demo
-You can click [here](https://yasin-weather.netlify.app) to use the application live.
+You can click [here](https://weather.yasinakbulut.com) to use the application live.
 
 ## Openweathermap API
 Thanks to this API, you can use weather information for free. Click [here](https://openweathermap.org/api) to learn more.
